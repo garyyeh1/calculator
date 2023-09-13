@@ -1,0 +1,54 @@
+
+/*centering the whole calculator*/
+
+body{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+
+}
+
+
+#border{
+    border: 2px solid black;
+    padding: 4px;
+    border-radius: 6px;
+    max-width: 204px;
+}
+
+/*aligning the first row and second row, third row and fourth row*/
+#firsthalf,
+#secondhalf{
+    display:flex;
+}
+
+
+/*aligning first half and second half*/
+#buttons{
+    display:flex;
+
+}
+
+/* making the numbers on the screen horizontal*/
+
+#screen-current{
+    display:flex;
+    height: 1.5em;
+    justify-content: end;
+
+}
+
+#screen-last{
+    display:flex;
+    justify-content: end;
+    height: 1em;
+}
+
+
+button{
+    padding: 20px;
+    width:100%
+
+}
