@@ -1,51 +1,60 @@
-function add(a,b){
+function add(){
     viewHistory()
     let newClick = document.createElement('div')
     newClick.textContent = "+";
     history.appendChild(newClick);
-
-    // answer = a+b
-    // return answer
 }
 
-function subtract(a,b){
+function subtract(){
     viewHistory()
     let newClick = document.createElement('div')
     newClick.textContent = "-";
     history.appendChild(newClick);
-    answer = a-b
-    return answer
+
 }
-function multiply(a,b){
+function multiply(){
     viewHistory()
     let newClick = document.createElement('div')
     newClick.textContent = '×';
     history.appendChild(newClick);
-    answer = a*b
-    return answer
+ 
 }
 
-function division(a,b){
+function division(){
     viewHistory()
     let newClick = document.createElement('div')
     newClick.textContent = "÷";
     history.appendChild(newClick);
-    answer = a/b
-    console.log(answer)
+
 }
 
 
-function operate(operator){
-    if (operator == 'add'){
-        add()
-        // screenContent(answer)
-    }else if (operator == 'subtract'){
-        subtract()
-    }else if (operator == 'divide'){
-        division()
-    }else if (operator == 'multiply'){
-        multiply()
+
+function operate(){
+    let b = Number(output.innerHTML)
+    let a = Number(history.childNodes[0].textContent)
+
+
+    if (history.firstElementChild.textContent == '+'){
+        let c = Number(a) + Number(b)
+        console.log(c)
+        
+
+    }else if (history.firstElementChild.textContent == '-'){
+        let c = Number(a) - Number(b)
+        console.log(c)
+
+    }else if (history.firstElementChild.textContent == '÷'){
+        let c = Number(a)/Number(b)
+        console.log(c)
+
+
+    }else if (history.firstElementChild.textContent == '×'){
+        let c = Number(a)*Number(b)
+        console.log(c)
     }
+    needReset = true
+    clearCurrentInput()
 
 }
 
@@ -64,6 +73,8 @@ function viewHistory(){
     let ccc = array.join('')
     history.textContent = ccc
     needReset= true
+
+    
 }
 
 let array = []
@@ -72,10 +83,8 @@ function arr (numbers){
     array.push(numbers)
     let ccc = array.join('')
     output.textContent = ccc
-    console.log(array)
+
 }
-
-
 
 
 
@@ -90,16 +99,16 @@ function clearCurrentInput(){
 
 /*buttons for operating**/
 let add1 = document.getElementById('add')
-add1.addEventListener('click', function(){operate('add')})
+add1.addEventListener('click', function(){add()})
 
 let subtract1 = document.getElementById('subtract')
-subtract1.addEventListener('click', function(){operate('subtract')})
+subtract1.addEventListener('click', function(){subtract()})
 
 let multiply1 = document.getElementById('multiply')
-multiply1.addEventListener('click', function(){operate('multiply')})
+multiply1.addEventListener('click', function(){multiply()})
 
 let divide1 = document.getElementById('divide')
-divide1.addEventListener('click', function(){operate('divide')})
+divide1.addEventListener('click', function(){division()})
 
 /*to get the buttons to work*/
 
@@ -188,5 +197,6 @@ let clearing = document.getElementById('clear')
 clearing.addEventListener('click', function(){clearing1()})
 function clearing1(){
     output.textContent = ''
+    history.textContent = ''
     array = []
 }
