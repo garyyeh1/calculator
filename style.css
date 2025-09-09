@@ -1,15 +1,28 @@
 .wrap {
     display:flex;
+    font-family: #2d2d2d;
+    background-color: #ecf0f1;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     box-shadow: 0px 0px 1px 1px rgba(116, 108, 108, 0.925);
     border-radius: 10px;
+    width: max-content; /*fitting the container  */
+}
+
+
+.display{
+    margin:10px;
+    padding:5px;
+    box-shadow: 0px 0px 1px 1px rgba(179, 170, 170, 0.966);
+    width: 89%;
+    text-align: right;
+    background-color: white;
+
 }
 
 /* Aligning the buttons in 5x4 grid */
 .buttons{
     display: flex;
-    flex-direction: row;
 }
 
 .operations button{
@@ -18,25 +31,30 @@
     border:none;
     box-shadow: 0px 0px 1px 1px rgba(116, 108, 108, 0.925);
     padding: 10px;
-    max-width: 40px;
-    max-height: 40px;
-    
+    width: 40px;
+    height: 40px;
+    font-size: 15px;
+    margin: 5px;
+    color:rgb(255, 255, 255);
+
+
 }
 
 /* space buttons evenly */
 .row1, .row2, .row3, .row4{
     display:flex;
-    justify-content: space-between;
 }
+
 
 .numbers button{
     background-color: lightgray;
-
     border-radius: 10px;
     border:none;
     box-shadow: 0px 0px 1px 1px rgba(116, 108, 108, 0.925);
     padding:10px;
-    max-width: 40px;
-    max-height: 40px;
-}
+    width: 40px;
+    height: 40px;
+    font-size: 10px;
+    margin: 5px;
 
+}
